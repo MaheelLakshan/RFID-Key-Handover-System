@@ -29,39 +29,34 @@ const Sidebar = () => {
       >
         <UilBars />
       </div>
-      {/* <motion.div
-        className="sidebar"
-        variants={sidebarVariants}
-        animate={window.innerWidth <= 768 ? `${expanded}` : ''}
-      > */}
-      {/* logo */}
-      <div className="logo">
-        <img src={Logo} alt="logo" />
-        <span>
-          {/* Sh<span>o</span>ps */}
-          SYSTEM
-        </span>
-      </div>
+      <div>
+        {/* logo */}
+        <div className="logo">
+          <img src={Logo} alt="logo" />
+          <span>
+            SYSTEM
+          </span>
+        </div>
 
-      <div className="menu">
-        {SidebarData.map((item, index) => {
-          return (
-            <div
-              className={selected === index ? 'menuItem active' : 'menuItem'}
-              key={index}
-              onClick={() => setSelected(index)}
-            >
-              <item.icon />
-              <span>{item.heading}</span>
-            </div>
-          );
-        })}
-        {/* signoutIcon */}
-        <div className="menuItem">
-          <UilSignOutAlt />
+        <div className="menu">
+          {SidebarData.map((item, index) => {
+            return (
+              <div
+                className={selected === index ? 'menuItem active' : 'menuItem'}
+                key={index}
+                onClick={() => setSelected(index)}
+              >
+                <item.icon />
+                <span>{item.heading}</span>
+              </div>
+            );
+          })}
+          {/* signoutIcon */}
+          <div className="menuItem">
+            <UilSignOutAlt />
+          </div>
         </div>
       </div>
-      {/* </motion.div> */}
     </>
   );
 };
