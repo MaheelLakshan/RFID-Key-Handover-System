@@ -76,7 +76,6 @@ function CompactCardUsual({ param, setExpanded }) {
 
 // Expanded Card
 function ExpandedCard({ param, setExpanded }) {
- 
   return (
     <motion.div
       className="ExpandedCard"
@@ -90,8 +89,14 @@ function ExpandedCard({ param, setExpanded }) {
         <UilTimes onClick={setExpanded} />
       </div>
       <span>{param.title}</span>
+      {/* param.map((param.) => (
+          <li key={User.id}>
+            <a href="#">edit</a> {User.Firstname}
+          </li>
+        )); */}
+      <div>{param.value}</div>
       <div className="chartContainer">
-        {/* <Chart options={data.options} series={param.series} type="area" /> */}
+        <h1>ads</h1>
       </div>
       <span>Last 24 hours</span>
     </motion.div>

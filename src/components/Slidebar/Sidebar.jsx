@@ -3,62 +3,47 @@ import './Sidebar.css';
 import Logo from '../../Assets/rfid-icon.png';
 import { UilSignOutAlt } from '@iconscout/react-unicons';
 import { SidebarData } from '../../Data/Data';
-import { UilBars } from '@iconscout/react-unicons';
+import { NavLink } from 'react-router-dom';
 // import { motion } from 'framer-motion';
 
-const Sidebar = () => {
+function Sidebar() {
   const [selected, setSelected] = useState(0);
 
-  const [expanded, setExpaned] = useState(true);
-
-  const sidebarVariants = {
-    true: {
-      left: '0',
-    },
-    false: {
-      left: '-60%',
-    },
+  const navLinkStyles = {
+    textDecoration: 'none',
+    // margin: '0.15rem',
+    color: 'black',
   };
-  console.log(window.innerWidth);
-  return (
-    <>
-      <div
-        className="bars"
-        style={expanded ? { left: '60%' } : { left: '5%' }}
-        onClick={() => setExpaned(!expanded)}
-      >
-        <UilBars />
-      </div>
-      <div>
-        {/* logo */}
-        <div className="logo">
-          <img src={Logo} alt="logo" />
-          <span>
-            SYSTEM
-          </span>
-        </div>
 
-        <div className="menu">
-          {SidebarData.map((item, index) => {
-            return (
-              <div
-                className={selected === index ? 'menuItem active' : 'menuItem'}
-                key={index}
-                onClick={() => setSelected(index)}
-              >
-                <item.icon />
-                <span>{item.heading}</span>
-              </div>
-            );
-          })}
-          {/* signoutIcon */}
-          <div className="menuItem">
-            <UilSignOutAlt />
-          </div>
+  return (
+    <div>
+      <div className="logo">
+        <img src={Logo} alt="logo" />
+        <span>SYSTEM</span>
+      </div>
+      <div className="menu">
+        {SidebarData.map((item, index) => (
+          <NavLink
+            to={`${item.where}`}
+            style={navLinkStyles}
+            // className={selected === index ? 'menuItem active' : 'menuItem'}
+            key={index}
+            className={({ isActive }) =>
+              isActive ? 'menuItem active' : 'menuItem'
+            }
+          >
+            <item.icon />
+
+            {item.heading}
+          </NavLink>
+        ))}
+
+        <div className="menuItem">
+          <UilSignOutAlt />
         </div>
       </div>
-    </>
+    </div>
   );
-};
+}
 
 export default Sidebar;

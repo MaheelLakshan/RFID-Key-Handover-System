@@ -1,15 +1,17 @@
 import './App.css';
-import MainDash from './components/MainDash/MainDash';
-import Slidebar from './components/Slidebar/Sidebar';
-import Updates from './components/Updates/Updates'
+import MainDash from '../../MainDash/MainDash';
+import Slidebar from '../../Slidebar/Sidebar';
+import Updates from '../../Updates/Updates';
 
 function App() {
   return (
     <div className="App">
       <div className="AppGlass">
         <Slidebar />
+
         <MainDash />
-        <Updates/>
+
+        <Updates />
       </div>
     </div>
   );
