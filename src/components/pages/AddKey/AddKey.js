@@ -1,6 +1,6 @@
 import './AddKey.css';
 import Slidebar from '../../Slidebar/Sidebar';
-import AddKeyForm from '../../AddKeyForm/AddForm';
+import AddKeyForm from '../../AddKeyForm/AddKeyForm';
 
 function AddKey() {
   return (
@@ -8,7 +8,7 @@ function AddKey() {
       <div className="AddKeyGlass">
         <Slidebar />
 
-        {/* <AddKeyForm /> */}
+        <AddKeyForm />
 
         {/* <Updates /> */}
       </div>

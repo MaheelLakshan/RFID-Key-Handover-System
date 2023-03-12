@@ -7,7 +7,7 @@ const Updates = () => {
     <div className="Updates">
       <h2 className="Heading">Last Read</h2>
 
-      {UpdatesData.map((update) => (
+      {/* {UpdatesData.map((update) => (
         <div className="update">
           <img src={update.img} alt="profile" />
           <div className="noti">
@@ -18,7 +18,7 @@ const Updates = () => {
             <span>{update.time}</span>
           </div>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 };

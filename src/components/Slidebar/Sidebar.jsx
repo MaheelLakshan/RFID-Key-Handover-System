@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
 import Logo from '../../Assets/rfid-icon.png';
-import { UilSignOutAlt } from '@iconscout/react-unicons';
 import { SidebarData } from '../../Data/Data';
 import { NavLink } from 'react-router-dom';
 // import { motion } from 'framer-motion';
 
 function Sidebar() {
-  const [selected, setSelected] = useState(0);
+  // const [selected, setSelected] = useState(0);
 
   const navLinkStyles = {
     textDecoration: 'none',
@@ -37,10 +36,6 @@ function Sidebar() {
             {item.heading}
           </NavLink>
         ))}
-
-        <div className="menuItem">
-          <UilSignOutAlt />
-        </div>
       </div>
     </div>
   );

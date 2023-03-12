@@ -4,14 +4,13 @@ import {
   UilClipboardAlt,
   UilUsersAlt,
   UilPackage,
-  UilChart,
   UilSignOutAlt,
 } from '@iconscout/react-unicons';
 
 //Get data from firebase
-import { onSnapshot, collection } from 'firebase/firestore';
-import { useEffect, useState } from 'react';
-import db from '../firebaseConfig/firebase';
+// import { onSnapshot, collection } from 'firebase/firestore';
+// import { useEffect, useState } from 'react';
+// import db from '../firebaseConfig/firebase';
 
 // Analytics Cards imports
 import { UilUsdSquare, UilMoneyWithdrawal } from '@iconscout/react-unicons';
@@ -42,6 +41,11 @@ export const SidebarData = [
     heading: 'Add Keys',
     where: '/addkeys',
   },
+  {
+    icon: UilSignOutAlt,
+    heading: 'LogOut',
+    where: '/Logout',
+  },
 ];
 
 //usual compactcard
@@ -63,27 +67,27 @@ export const SidebarData = [
 //     value: '12',
 //   },
 // ];
-export function Users() {
-  const [users, GetUsers] = useState([{ name: 'Loading...', id: 'initial' }]);
+// export function Users() {
+//   const [users, GetUsers] = useState([{ name: 'Loading...', id: 'initial' }]);
 
-  useEffect(
-    () =>
-      onSnapshot(collection(db, 'Users'), (snapshot) =>
-        GetUsers(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-      ),
-    []
-  );
+//   useEffect(
+//     () =>
+//       onSnapshot(collection(db, 'Users'), (snapshot) =>
+//         GetUsers(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+//       ),
+//     []
+//   );
 
-  // return (
-  //   <ul>
-  //     {Users.map((User) => (
-  //       <li key={User.id}>
-  //         <a href="#">edit</a> {User.Firstname}
-  //       </li>
-  //     ))}
-  //   </ul>
-  // );
-}
+//   // return (
+//   //   <ul>
+//   //     {Users.map((User) => (
+//   //       <li key={User.id}>
+//   //         <a href="#">edit</a> {User.Firstname}
+//   //       </li>
+//   //     ))}
+//   //   </ul>
+//   // );
+// }
 
 // Analytics Cards Data..this is to be handover
 export const cardsData = [
